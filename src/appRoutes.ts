@@ -4,7 +4,7 @@ import sampleRoute from "./router/sample.route";
 
 class AppRoutes {
 
-    public routers: IAppRouteInfo[] = [];
+    private routers: IAppRouteInfo[] = [];
 
     public routes() {
         this.routers.push({ path: "/", router: sampleRoute });

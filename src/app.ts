@@ -1,5 +1,5 @@
 import express from "express";
-import AppRoutes from "./routes";
+import AppRoutes from "./appRoutes";
 
 class App {
 
