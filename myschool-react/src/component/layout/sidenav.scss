@@ -1,0 +1,26 @@
+.nav {
+  padding-top: 30px;
+  background: #ffffff;
+  border-right: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+a {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.sub-menu-li {
+  list-style: none;
+}
+
+.no-style-btn {
+  border: none;
+  background: white;
+}
+
+.no-style-btn:focus {
+  outline: none;
+}

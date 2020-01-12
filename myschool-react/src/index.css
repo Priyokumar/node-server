@@ -1,0 +1,93 @@
+@import '../node_modules/react-inputs-validation/lib/react-inputs-validation.min.css';
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.row {
+  margin: 0 !important;
+}
+
+.page-conatiner {
+  background: #ffffff;
+  min-height: 60vh;
+}
+
+.breadcrumb {
+  background-color: #ffffff !important;
+}
+
+ol {
+  margin-bottom: 0 !important;
+}
+
+.breadcrumb-row {
+  background-color: #ffffff !important;
+}
+
+.action-col {
+  line-height: 43px;
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+.breadcrumb-link {
+  color: #ffffff !important;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: none !important;
+}
+
+hr {
+  margin: 10px 0 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.react-date-picker__wrapper {
+  width: 100%;
+  padding-bottom: 6px
+}
+
+.w-10 {
+  width: 10%
+}
+
+.w-15 {
+  width: 15%
+}
+
+.w-20 {
+  width: 20%
+}
+
+.lead {
+  font-weight: 400 !important;
+}
+
+strong {
+  font-weight: 500 !important;
+}
+
+.tr-hover:hover{
+  background-color: #efefef
+}

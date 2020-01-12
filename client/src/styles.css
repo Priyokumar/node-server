@@ -1,0 +1,146 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 13px;
+}
+
+.mat-icon {
+  vertical-align: middle !important;
+  font-size: 20px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+.myschool-purple-btn {
+  background-color: #7b1fa2 !important;
+  color: #ffffff;
+}
+
+.myschool-purple-btn[disabled] {
+  background-color: #d99df3 !important;
+  color: #dbd6d6 !important;
+}
+
+.myschool-cancel-btn {
+  background-color: deeppink !important;
+  color: #ffffff;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
+
+.btn {
+  color: #ffffff;
+  font-size: 12px;
+  padding: 0.2rem 0.75rem;
+  margin: 3px 2px;
+  height: 28px;
+}
+
+.btn-save {
+  background: #029734;
+}
+
+.btn-edit {
+  background: #4696d2;
+}
+
+.btn-cancel {
+  background: #ee3f64;
+}
+
+/* Mat tab */
+
+.mat-tab-label {
+  width: 100% !important;
+  min-width: auto;
+}
+
+/* ================================== Mat table ====================================*/
+
+table {
+  width: 100%;
+}
+
+::ng-deep .mat-table {
+  padding: 20px;
+}
+
+tr {
+  height: 20px !important;
+}
+
+th {
+  font-size: 13px;
+}
+
+td {
+  font-size: 12px;
+  padding: 6px !important;
+}
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+  border-bottom-width: 1;
+  border-bottom-style: solid;
+  border-color: rgba(196, 196, 196, 0.25);
+}
+
+.mat-header-cell {
+  border-bottom-width: 1px !important;
+  background: #dddddd;
+  color: #000000;
+}
+
+tr.mat-row:hover {
+  cursor: pointer;
+  background: #efefef;
+}
+
+.table-header {
+  background: #dddddd;
+  color: #000000;
+  padding: 0;
+}
+
+::ng-deep .mat-tab-body-content {
+  overflow: hidden !important;
+}
+
+.dialg-header {
+  background-image: linear-gradient(
+    to right,
+    #065c37,
+    #09713f,
+    #138747,
+    #229d4c,
+    #33b451
+  );
+  padding: 5px;
+  color: #ffffff;
+  padding-left: 15px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

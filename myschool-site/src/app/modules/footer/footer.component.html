@@ -1,0 +1,28 @@
+<div class="footer-container">
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="30px">
+    <div class="link">
+      <h6>LINKS</h6>
+      <div class="link-a" *ngFor="let link of links"> <a [routerLink]="link.url"> {{link.name}}</a></div>
+    </div>
+    <div>
+      <h6>REACH US</h6>
+      <p>
+        <mat-icon>email</mat-icon> pesleishangthem@gmail.com
+      </p>
+      <p>
+        <mat-icon>call</mat-icon> +91 000000000
+      </p>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
+    <div><strong>Copyright @2019 - Public English School Leishangthem</strong></div>
+    <div>
+      <span>
+        <img src="../../../assets/images/icons/facebook.png" alt="" width="33" height="30">
+      </span>&nbsp;
+      <span>
+        <img src="../../../assets/images/icons/youtube.png" alt="" width="35" height="39">
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+<div class="shadow form-min-height ml-3 mr-3 mt-1 pb-5">
+  <div class="row p-1" style="background-color: #dddddd">
+    <div class="col-md-6" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <span style="font-weight: bold; font-size: 14px; line-height: 35px;">Student Details</span>
+    </div>
+    <div class="col-md-6 text-right" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <button class="btn btn-save" routerLink="/student/list">
+        <mat-icon>keyboard_arrow_left</mat-icon>&nbsp;Back
+      </button>
+      <button class="btn btn-cancel" (click)="delete()">
+        <mat-icon>clear</mat-icon>&nbsp;Delete
+      </button>
+      <button class="btn btn-edit" (click)="edit()">
+        <mat-icon>edit</mat-icon>&nbsp;Edit
+      </button>
+      <button class="btn btn-save" [routerLink]="['/student/create']">
+        <mat-icon>add</mat-icon>&nbsp;New Registration
+      </button>
+    </div>
+  </div>
+  <div class="row p-1" style="background-color: #f07a7a;color: #ffffff" *ngIf="errorMessage">
+    <div class="col">
+      <span>{{errorMessage}}</span>
+    </div>
+  </div>
+
+  <div [ngClass]="['pt-1','pr-5','pl-5']" [ngClass.lt-md]="['p-0']" *ngIf="student">
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">info</mat-icon>
+          <span style="font-size: 13px;">General Info</span>
+        </ng-template>
+
+        <div class="row pt-3">
+
+          <div class="col-md-12">
+            <p style="font-weight: bold; font-size: 14px;">Registration Info</p>
+          </div>
+
+          <div class="col-md-4">
+            <p>Registration Number : {{student.registrationNo}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Registration Date : {{student.registrationDate}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Registration Status : {{student.registrationStatus}}</p>
+          </div>
+          <!-- ============== Personal Info ===================== -->
+          <div class="col-md-12">
+            <p style="font-weight: bold; font-size: 14px;">Student Info</p>
+          </div>
+          <div class="col-md-4">
+            <p>First name : {{student.firstName}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Middle name : {{student.middleName}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Last name : {{student.lastName}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Standard : {{student.standard}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Date of birth : {{student.dob}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Joining Date : {{student.joiningDate}}</p>
+          </div>
+          <!-- ============== Personal Info ===================== -->
+          <div class="col-md-12">
+            <p style="font-weight: bold; font-size: 14px;">Address</p>
+          </div>
+          <div class="col-md-4">
+            <p>First line : {{student.correspondentAddress?.firstLine}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Second line : {{student.correspondentAddress?.secondLine}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Country : {{student.correspondentAddress?.country}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>District : {{student.correspondentAddress?.district}}</p>
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>contact_phone</mat-icon>
+          <span style="font-size: 13px;">Parent's and Guardian's Info</span>
+        </ng-template>
+
+        <div class="row pt-3">
+
+          <div class="col-md-12">
+            <p style="font-weight: bold; font-size: 14px;">Father's details</p>
+          </div>
+          <div class="col-md-4">
+            <p>Father's Name : {{student.fatherInfo?.name}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Date of birth : {{student.fatherInfo?.dob}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Contact No. : {{student.fatherInfo?.contactNo}}</p>
+          </div>
+
+          <div class="col-md-12">
+            <p style="font-weight: bold; font-size: 14px;">Mother's details</p>
+          </div>
+          <div class="col-md-4">
+            <p>Mother's Name : {{student.motherInfo?.name}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Date of birth : {{student.motherInfo?.dob}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Contact No. : {{student.motherInfo?.contactNo}}</p>
+          </div>
+
+          <div class="col-md-12">
+            <p style="font-weight: bold; font-size: 14px;">Guardian's details</p>
+          </div>
+          <div class="col-md-4">
+            <p>Guardian's Name : {{student.guardianInfo?.name}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Date of birth : {{student.guardianInfo?.dob}}</p>
+          </div>
+          <div class="col-md-4">
+            <p>Contact No. : {{student.guardianInfo?.contactNo}}</p>
+          </div>
+
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+</div>

@@ -1,0 +1,148 @@
+<div style="height: 500px">
+  <div class="dialg-header w-100">
+    <div class="row">
+      <div class="col-md-6 text-left">
+        <span class="lead">Menu</span>
+      </div>
+      <div class="col-md-6 text-right">
+        <button class="btn btn-cancel mt-2" (click)="cancel()">
+          <mat-icon>clear</mat-icon>&nbsp;Cancel
+        </button>
+        <button class="btn btn-save mt-2" (click)="add()">
+          <mat-icon>add</mat-icon>&nbsp;Add
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row p-4">
+
+    <div class="col-md-12 p-0">
+      <div class="row">
+
+        <div class="col-md-12">
+          <p style="font-weight: bold; font-size: 14px;">Menu Info</p>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Menu</mat-label>
+            <mat-select placeholder="Menu" [formControl]="idFctrl">
+              <mat-option *ngFor="let option of menus" [value]="option.id">
+                {{option.title}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="idFctrl.hasError('required')">
+              Menu is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Title" [formControl]="titleFctrl">
+            <mat-error *ngIf="titleFctrl.hasError('required')">
+              Title is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Order</mat-label>
+            <input matInput placeholder="Order" [formControl]="orderFctrl">
+            <mat-error *ngIf="orderFctrl.hasError('required')">
+              Order is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Icon</mat-label>
+            <input matInput placeholder="Icon" [formControl]="iconFctrl">
+            <mat-error *ngIf="iconFctrl.hasError('required')">
+              Icon is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Has Submenu</mat-label>
+            <mat-select placeholder="Menu" [formControl]="hasSubmenuFctrl">
+              <mat-option *ngFor="let option of hasSubMenus" [value]="option.key">
+                {{option.value}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hasSubmenuFctrl.hasError('required')">
+              Has Submenu is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-12 shadow-sm table-header mb-5">
+      <div class="no-shadow">
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Menu</mat-label>
+              <mat-select placeholder="Menu" [formControl]="subMenuFctrl" #submenuinput>
+                <mat-option *ngFor="let option of subMenusSelect" [value]="option">
+                  {{option.title}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="subMenuFctrl.hasError('required')">
+                Menu is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-save mt-2" (click)="addSubMenu()">
+              <mat-icon>add</mat-icon>&nbsp;Add Submenu
+            </button>
+          </div>
+        </div>
+        <table mat-table [dataSource]="subMenuDataSource" matSort class="p">
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+            <td mat-cell *matCellDef="let row; let i = index">{{i+1}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+            <td mat-cell *matCellDef="let row">{{row.title}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="order">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Order</th>
+            <td mat-cell *matCellDef="let row"> {{row.order}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="icon">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Icon</th>
+            <td mat-cell *matCellDef="let row"> {{row.icon}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let row; let i = index" class="text-right">
+              <mat-icon (click)="onDelete(i)" style="color: firebrick">close</mat-icon> &nbsp;
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="subMenuColumns;sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: subMenuColumns ; let i = index;">
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap.scss";
+@import "./assets/scss/color.scss";
+@import "./assets/scss/font.scss";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: $font-roboto;
+  font-size: $text;
+  font-weight: 400;
+  color: $black1;
+}
+.no-text-deco {
+  text-decoration: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.row {
+  margin: 0;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2px;
+}
+
+.letter-spacing-3 {
+  letter-spacing: 3px;
+}
+
+// Mat
+.mat-icon {
+  vertical-align: middle !important;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+.mat-spinner-vertical-spacer {
+  height: 4px;
+}
+
+// Important
+.mat-form-field-appearance-legacy.mat-form-field-can-float
+  .mat-input-server:focus
+  + .mat-form-field-label-wrapper
+  .mat-form-field-label,
+.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.6em) scale(0.75) perspective(100px) translateZ(0.008px) !important;
+  -ms-transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px) !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  color: #5f5f5f !important;
+}
+
+.mat-form-field {
+  line-height: 2;
+}

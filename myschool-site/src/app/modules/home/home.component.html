@@ -1,0 +1,153 @@
+<div [ngStyle.gt-md]="{'width':'80vw'}" style="margin-left: auto; margin-right: auto">
+
+
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide *ngFor="let image of images">
+      <div [ngStyle.lt-md]="{'height': '45vh'}" [ngStyle.gt-md]="{'height': '60vh'}">
+        <img [src]="image" alt="Random first slide" height="100%" width="100%">
+      </div>
+      <!--  <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div> -->
+    </ng-template>
+  </ngb-carousel>
+
+
+  <div class="row mt-3">
+    <div class="col-md-9 p-0">
+      <div class="row ">
+        <div class="col-md-12 text-center">
+
+          <div class="pt-3">
+            <h4>Welcome to Public English School Leishangthem</h4>
+            <p class="text-justify">
+              A warm welcome to PES – an outstanding school located at Leishangthem Wangma Taba, Thoubal. Here
+              you will find a dedicated and talented team of staff, hard-working and engaging pupils along with
+              supportive and proud parents. Together we are a team – together we are Greet!
+              Our pupils are at the heart of all that we do. We provide an exciting, broad and balanced curriculum to
+              inspire and motivate our pupils with opportunities to promote independence, learn life-long skills and to
+              have aspirations for the future.
+            </p>
+            <p class="text-justify"> Our website gives you a glimpse of daily life at PES. Look around.
+              You’ll see that our teachers, administrators, and staff are committed to providing a safe and nurturing
+              learning environment for our students by providing the best learning opportunities for students.
+            </p>
+
+          </div>
+
+        </div>
+        <div class="col-md-9 p-0">
+          <div class="p-3">
+            <div class="row">
+              <div class="col-md-12">
+                <h4>
+                  Principal
+                </h4>
+              </div>
+              <div class="col-md-6">
+                <img src="../../../assets/images/prinicipal/principal.JPG" alt="" class="img-thumbnail" width="100%"
+                  height="100%">
+                <br><br>
+              </div>
+              <div class="col-md-6 p-0 text-justify">
+                <p><strong>Nongthombam Rabei Singh</strong></p>
+                <p>
+                  We are excited that you have chosen PES and we are glad you’ve joined the Bulldog family. I am honored
+                  to serveRobert Hernandez as Principal of PES and to be a part of a culture steeped in rich tradition
+                  and academic excellence.
+                </p>
+                <p>
+                  Our faculty, staff, and administration are focused on providing a quality learning experience for all
+                  students through the various curricular and extracurricular opportunities available.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-3">
+          <div class=" p-3">
+            <h4>
+              <mat-icon>notifications</mat-icon> Notification
+            </h4>
+            <p class="text-justify" style="color: rgb(236, 162, 0)"><strong>
+                No new notification !
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 pt-2" style="border-left: 1px #dddddd solid">
+      <div class="row pt-4">
+        <div class="col-md-12 text-center">
+          <img src="../../../assets/images/icons/customer-service.png" alt="" height="30" width="40"> &nbsp;
+          <h3>Admission Enquiry</h3>
+        </div>
+
+        <div class="col-md-12 mt-4">
+          <mat-form-field appearance="legacy" class="w-100">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter your name" [formControl]="nameFormCntrl" required>
+            <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 mt-3">
+          <mat-form-field appearance="legacy" class="w-100">
+            <mat-label>Email / Mobile</mat-label>
+            <input matInput placeholder="Enter your email / mobile no." [formControl]="emailOrMobileFormCntrl" required>
+            <!-- <mat-icon matSuffix>email</mat-icon> -->
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 mt-3">
+          <mat-form-field class="w-100">
+            <mat-label>Admission for</mat-label>
+            <mat-select [formControl]="standardFormCntrl" required>
+              <mat-option *ngFor="let standard of standards" [value]="standard">
+                {{standard}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 mt-3">
+          <mat-form-field class="w-100">
+            <textarea matInput placeholder="Message" [formControl]="descriptionFormCntrl" required></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 mt-3 text-center">
+          <button class="w-100" mat-raised-button color="primary" (click)="submit()">Submit</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div class="p-4 text-center" [ngStyle.gt-md]="{'width': '70%'}">
+      <img src="../../../assets/images/icons/mission.png" alt="mission" height="40%" width="14%">
+      <h4 class="text-center">Vision & Mission</h4>
+
+      <p class="text-justify">
+        <strong>Mission : </strong>
+        The PES prepares students to understand, contribute to, and succeed in a rapidly changing society, thus
+        making the world a better and more just place. We will ensure that our students develop both the skills that a
+        sound education provides and the competencies essential for success and leadership in the emerging creative
+        economy. We will also lead in generating practical and theoretical knowledge that enables people to better
+        understand our world and improve conditions for local and global communities.
+      </p>
+      <p class="text-justify">
+        <strong>Vision : </strong>
+        Our vision at PES is to empower students to acquire, demonstrate, articulate and value
+        knowledge and skills that will support them, as life-long learners, to participate in and contribute to the
+        global world and practise the core values of the school: respect, tolerance & inclusion, and excellence.
+      </p>
+    </div>
+  </div>
+</div>

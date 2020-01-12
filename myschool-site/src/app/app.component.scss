@@ -1,0 +1,16 @@
+.mat-sidenav {
+  margin-top: 75px;
+  background-image: linear-gradient(to right, #037119, #1c881b, #329f1a, #48b616, #5fce0c);
+}
+
+.mat-sidenav-content {
+  margin-top: 100px;
+}
+
+.mat-list-base .mat-list-item {
+  color: #ffffff;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #ffffff !important ;
+}

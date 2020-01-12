@@ -1,0 +1,65 @@
+<div class="shadow form-min-height ml-3 mr-3 mt-1 pb-5">
+  <div class="row p-1" style="background-color: #dddddd">
+    <div class="col-md-6" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <span style="font-weight: bold; font-size: 14px; line-height: 35px;">User Details</span>
+    </div>
+    <div class="col-md-6 text-right" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <button class="btn btn-save" routerLink="/security/users">
+        <mat-icon>keyboard_arrow_left</mat-icon>&nbsp;Back
+      </button>
+      <button class="btn btn-cancel" (click)="delete()">
+        <mat-icon>clear</mat-icon>&nbsp;Delete
+      </button>
+      <button class="btn btn-edit" (click)="edit()">
+        <mat-icon>edit</mat-icon>&nbsp;Edit
+      </button>
+      <button class="btn btn-save" [routerLink]="['/security/user-create']">
+        <mat-icon>add</mat-icon>&nbsp;New Role
+      </button>
+    </div>
+  </div>
+  <div class="row p-1" style="background-color: #f07a7a;color: #ffffff" *ngIf="errorMessage">
+    <div class="col">
+      <span>{{errorMessage}}</span>
+    </div>
+  </div>
+
+  <div [ngClass]="['pt-1','pr-5','pl-5']" [ngClass.lt-md]="['p-0']" *ngIf="user">
+
+    <div class="row pt-3">
+
+      <div class="col-md-12">
+        <p style="font-weight: bold; font-size: 14px;">User Info</p>
+      </div>
+      <div class="col-md-4">
+        <p>Name : {{user.firstName}}</p>
+      </div>
+      <div class="col-md-4">
+        <p>Last Name : {{user.lastName}}</p>
+      </div>
+      <div class="col-md-4">
+        <p>Email : {{user.email}}</p>
+      </div>
+      <div class="col-md-4">
+        <p>Mobile : {{user.mobile}}</p>
+      </div>
+      <div class="col-md-4">
+        <p>Status : {{user.status}}</p>
+      </div>
+      <div class="col-md-4">
+        <p>User Name : {{user.userName}}</p>
+      </div>
+      <div class="col-md-12">
+        <div class="p-3" style="border: 1px solid #c6c6c6; border-radius: 5px">
+          <p><b>Selected Roles</b></p>
+          <hr>
+          <mat-chip-list>
+            <mat-chip color="primary" selected *ngFor="let role of user.roles">{{role.name}}</mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

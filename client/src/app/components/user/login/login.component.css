@@ -1,0 +1,83 @@
+.login-box{
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: 5%;
+    width: 30%;
+}
+
+.login-box-header{
+    background-color: #7b1fa2;
+    font-size: 25px;
+    color: #ffffff
+}
+
+.login-form{
+
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%
+}
+
+.login-box-footer{
+    background-color: #7b1fa2;
+}
+
+.mat-flat-button{
+    background-color: #7b1fa2;
+}
+
+.mat-icon {
+    transform: scale(1.4);
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+    background-color: rgb(8, 242, 250);
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background: rgb(180, 231, 10);
+}
+
+::ng-deep .mat-progress-bar {
+    border-radius: 10px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .login-box{
+        width: 90%;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .login-box{
+        width: 80%;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .login-box{
+        width: 75%;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .login-box{
+        width: 70%;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .login-box{
+        width: 30%;
+    }
+}
+
+
+

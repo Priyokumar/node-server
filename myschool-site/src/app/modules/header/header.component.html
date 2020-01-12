@@ -1,0 +1,31 @@
+<div class="header-continer shadow-lg">
+  <nav class="navbar navbar-expand-lg" id="brand-toolbar">
+    <div class="row w-100">
+      <div class="col-md-12 text-center top-header">
+        <button mat-button routerLink="/"><span ngClass="title title-sm primary-color"
+            [ngClass.lt-md]="{'title':false,'title-sm':true}" [ngClass.gt-md]="{'title-sm':false,'title':true}">Public
+            English School
+            Leishangthem</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg" id="product-nav">
+    <div class="row w-100">
+      <div class="col-md-6 text-left header">
+        <span>
+          <button fxHide="true" fxShow.lt-md="true" mat-icon-button>
+            <mat-icon style="font-size: 22px;" (click)="sidenav.toggle()">menu</mat-icon>
+          </button>
+          <strong>Info : pesleishangthem@gmail.com</strong> &nbsp;
+        </span>
+      </div>
+      <div class="col-md-6 text-right" fxShow="true" fxHide.lt-md="true">
+        <span *ngFor="let link of links"><button class="primary-color" mat-flat-button
+            [routerLink]="link.url">{{link.name}}</button>&nbsp;</span>
+        <span><button class="primary-color" mat-flat-button (click)="onCLickAdmin()">Admin</button>&nbsp;</span>
+      </div>
+    </div> 
+  </nav>
+</div>

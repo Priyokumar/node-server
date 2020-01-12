@@ -1,0 +1,4 @@
+<app-module *ngIf="(hasLoginedObs | async) === true else login"></app-module>
+<ng-template #login>
+    <app-security ></app-security>
+</ng-template>

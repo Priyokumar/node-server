@@ -1,0 +1,65 @@
+<div class="shadow form-min-height ml-3 mr-3 mt-1 pb-5">
+  <div class="row p-1" style="background-color: #f07a7a;color: #ffffff" *ngIf="errorMessage">
+    <div class="col">
+      <span>{{errorMessage}}</span>
+    </div>
+  </div>
+  <div class="row p-1" style="background-color: #dddddd">
+    <div class="col-md-6" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <span style="font-weight: bold; font-size: 14px; line-height: 35px;">Students</span>
+    </div>
+    <div class="col-md-6 text-right" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <button class="btn btn-save" [routerLink]="['/student/create']">
+        <mat-icon>add</mat-icon>&nbsp;New Registration
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Employess -->
+    <div class="col-md-12 table-header mb-5">
+      <!-- Table -->
+      <div class="no-shadow w-100">
+        <table mat-table [dataSource]="studentsDataSource" matSort class="">
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+            <td style="padding-left: 25px !important;" mat-cell *matCellDef="let row; let i = index">{{i+1}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let row" class="name-class" (click)="onClickRow(row.id)">{{row.firstName
+              +" "+row.lastName}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="registrationNo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Registration No.</th>
+            <td mat-cell *matCellDef="let row"> {{row.registrationNo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="registrationDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Registration Date</th>
+            <td mat-cell *matCellDef="let row"> {{row.registrationDate}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="registrationStatus">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Registration Status</th>
+            <td mat-cell *matCellDef="let row"> {{row.registrationStatus}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let row" class="text-right" (click)="onDeleteRow(row.id)">
+              <mat-icon style="color: firebrick; cursor: pointer;">clear</mat-icon> &nbsp;
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="studentsColumns;sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: studentsColumns ; let i = index;">
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

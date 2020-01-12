@@ -1,0 +1,87 @@
+<div class="w-100 mt-1">
+  <div class="p-2" [ngStyle.lt-md]="{'width':'100vw','text-align':'center'}" [ngStyle.gt-md]="{'width':'80vw'}"
+    style="margin-right: auto;margin-left: auto;background-color: #f5821e;color: #ffffff">
+    <h3>Contact Us</h3>
+  </div>
+</div>
+
+<div [ngStyle.gt-md]="{'width':'80vw'}" style="margin-left: auto; margin-right: auto" class="p-3">
+
+
+  <div class="row mt-4">
+
+    <div class="col-md-8">
+      <div class="row"> 
+
+        <div class="col-md-6 align-self-center  text-center">
+          <div class="w-100">
+            <mat-icon style="font-size: 60px; color: #329f1a">place</mat-icon>
+          </div>
+          <br>
+          <br>
+          <p>
+            Leishangthem Wangma taba, near Leishangthem Oil Pump, Thoubal Manipur India - 795138
+          </p>
+        </div>
+
+
+        <div class="col-md-6 align-self-center text-center">
+          <div class="w-100 ">
+            <mat-icon style="font-size: 60px; color: #329f1a">local_phone</mat-icon>
+          </div>
+          <br>
+          <br>
+          <p>
+            +91 0000000000
+          </p>
+        </div>
+
+        <div class="col-md-6 align-self-center text-center">
+            <div class="w-100 ">
+              <mat-icon style="font-size: 60px; color: #329f1a">email</mat-icon>
+            </div>
+            <br>
+            <br>
+            <p>
+              pesleishangthem@gmail.com
+            </p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4 pb-5">
+      <div class="w-100 text-center pb-2">
+        <h2 style="font-weight: 400;">Get in touch</h2>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <mat-form-field appearance="legacy" class="w-100">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter your name" [formControl]="nameFormCntrl" required>
+            <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 mt-3">
+          <mat-form-field appearance="legacy" class="w-100">
+            <mat-label>Email / Mobile</mat-label>
+            <input matInput placeholder="Enter your name" [formControl]="emailOrMobileFormCntrl" required>
+            <!-- <mat-icon matSuffix>email</mat-icon> -->
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 mt-3">
+          <mat-form-field class="w-100">
+            <textarea matInput rows="6" matInput placeholder="Message" [formControl]="descriptionFormCntrl" required></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 mt-3 text-center">
+          <button class="w-100" mat-raised-button color="primary" (click)="submit()">Submit</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

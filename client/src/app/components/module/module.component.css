@@ -1,0 +1,108 @@
+.mat-toolbar {
+  background-image: linear-gradient(to right, #065c37, #09713f, #138747, #229d4c, #33b451);
+  color: #ffffff;
+  height: 6% !important;
+  font-size: 12px;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+.mat-expansion-panel {
+  border-radius: 0;
+  background: #efefef;
+}
+
+.mat-drawer-side {
+  border-right: solid 3px rgba(0, 0, 0, 0.09);
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0px !important;
+  padding-left: 40px !important;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  background: #efefef;
+}
+
+::ng-deep .mat-menu-content:not(:empty) {
+  padding-top: 0 !important;
+}
+
+.with-bg {
+  background: url("../../../assets/images/1.JPG") no-repeat center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  max-height: 200px;
+}
+
+.profile-dropdown {
+  background-image: linear-gradient(to right, #065c37, #09713f, #138747, #229d4c, #33b451);
+}
+
+.nav-a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: mediumorchid;
+}
+
+::ng-deep .mat-menu-panel {
+  max-width: none;
+  width: 100vw;
+  margin-left: -8px;
+  margin-top: 15px;
+  overflow: visible;
+}
+
+.nav-mat-icon {
+  color: darkslategray;
+}
+
+.active-link {
+  border-left: limegreen 4px solid;
+  background-color: #dddddd;
+}
+
+::ng-deep .mat-list-item-content {
+  font-size: 13px;
+}
+
+.mat-expansion-panel-header {
+  font-size: 13px;
+  height: 38px;
+}
+
+.exp-line-heigth {
+  line-height: 35px;
+}
+
+.mat-expansion-panel {
+  border-radius: 0;
+  background: #efefef;
+}
+
+.mat-list .mat-list-item,
+.mat-list .mat-list-option,
+.mat-nav-list .mat-list-item,
+.mat-nav-list .mat-list-option,
+.mat-selection-list .mat-list-item,
+.mat-selection-list .mat-list-option {
+  height: 38px;
+}

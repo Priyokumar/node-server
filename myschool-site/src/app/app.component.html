@@ -1,0 +1,28 @@
+<app-header [sidenav]="sidenav"></app-header>
+<mat-sidenav-container>
+
+    <mat-sidenav [ngStyle.lt-md]="{'width': '70%'}" #sidenav [(opened)]="opened" [(mode)]="mode" class="shadow">
+
+        <div class="mt-3" fxHide="true" fxShow.lt-md="true">
+            <div>
+                <mat-nav-list>
+                    <a *ngFor="let link of links" mat-list-item [routerLink]="link.url" routerLinkActive='active-link'>
+                        {{link.name}}
+                    </a>
+                </mat-nav-list>
+            </div>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+<app-footer></app-footer>
+
+<div style="height: 100vh; width: 100vw;position: fixed; top:0;background: rgba(0, 0, 0, 0.8);z-index: 5000" *ngIf="loaderStatus | async">
+    <div style="height: 100vh;" fxLayout="row" fxLayoutAlign="center center">
+        <div style="color: aliceblue;"><mat-spinner></mat-spinner></div> 
+    </div>
+</div>

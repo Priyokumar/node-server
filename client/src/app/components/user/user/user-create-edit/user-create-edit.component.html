@@ -1,0 +1,135 @@
+<div class="shadow form-min-height ml-3 mr-3 mt-1 pb-5">
+  <div class="row p-1" style="background-color: #dddddd">
+    <div class="col-md-6" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <span style="font-weight: bold; font-size: 14px; line-height: 35px;">Add User</span>
+    </div>
+    <div class="col-md-6 text-right" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <button class="btn btn-cancel" routerLink="/security/users">
+        <mat-icon>clear</mat-icon>&nbsp;Cancel
+      </button>
+      <button class="btn btn-save" (click)="save()" [disabled]='!userForm.valid'>
+        <mat-icon>save_alt</mat-icon>&nbsp;Add User
+      </button>
+    </div>
+  </div>
+  <div class="row p-1" style="background-color: #f07a7a;color: #ffffff" *ngIf="errorMessage">
+    <div class="col">
+      <span>{{errorMessage}}</span>
+    </div>
+  </div>
+
+  <div [ngClass]="['pt-1','pr-5','pl-5']" [ngClass.lt-md]="['p-0']">
+
+    <div class="row pt-3">
+
+      <div class="col-md-12">
+        <p style="font-weight: bold; font-size: 14px;">User Info</p>
+      </div>
+      <div class="col-md-4" *ngIf="!userId">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Employee</mat-label>
+          <mat-select #selectedEmployee placeholder="Employee" [formControl]="employeeFormCtl" (selectionChange)="onSelectEmployee(selectedEmployee.value)">
+            <mat-option *ngFor="let option of employees" [value]="option.id">
+              {{option.firstName}} {{option.middleName}} {{option.lastName}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="roleFormCtl.hasError('required')">
+            Role is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>User Name</mat-label>
+          <input matInput placeholder="User Name" [formControl]="userNameFormCtl">
+          <mat-error *ngIf="userNameFormCtl.hasError('required')">
+            User Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Firt Name</mat-label>
+          <input matInput placeholder="Firt Name" [formControl]="firstNameFormCtl" readonly="readonly">
+          <mat-error *ngIf="firstNameFormCtl.hasError('required')">
+            Firt Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last Name" [formControl]="lastNameFormCtl" readonly="readonly">
+          <mat-error *ngIf="lastNameFormCtl.hasError('required')">
+            Last Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Firt Name" [formControl]="emailFormCtl" readonly="readonly">
+          <mat-error *ngIf="emailFormCtl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput placeholder="Mobile Number" [formControl]="mobileFormCtl" readonly="readonly">
+          <mat-error *ngIf="mobileFormCtl.hasError('required')">
+            Mobile Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Status</mat-label>
+          <mat-select placeholder="Status" [formControl]="statusFormCtl">
+            <mat-option *ngFor="let option of userStatuses" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="roleFormCtl.hasError('required')">
+            Status is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-12">
+        <div class="p-3" style="border: 1px solid #c6c6c6; border-radius: 5px">
+          <div class="row">
+            <div class="col-md-3 p-0">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Roles</mat-label>
+                <mat-select placeholder="Roles" [formControl]="roleFormCtl">
+                  <mat-option *ngFor="let option of roles" [value]="option">
+                    {{option.name}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="roleFormCtl.hasError('required')">
+                  Role is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-1 mt-1 p-0">
+              <button class="btn btn-save mt-2 w-100" (click)="addRole()">
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
+          </div>
+          <p><b>Selected Roles</b></p>
+          <hr>
+          <mat-chip-list>
+            <mat-chip color="primary" selected *ngFor="let addedRole of addedRoles" [removable]="true" (removed)="remove(addedRole)">{{addedRole.name}}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

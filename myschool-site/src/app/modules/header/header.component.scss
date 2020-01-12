@@ -1,0 +1,60 @@
+@import "../header/../../../assets/scss/common.scss";
+
+.brand:focus {
+  outline: none;
+}
+
+.top-header {
+  color: lighten(#F9CC10, 10%);
+}
+
+.top-header a {
+  color: darken(#D1F9FA, 1%);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.mat-fab,
+.mat-flat-button,
+.mat-mini-fab,
+.mat-raised-button {
+  color: darken($white-color, 5%);
+  background: transparent;
+}
+
+.nav-link {
+  font-size: 15px;
+}
+
+.nav-link {
+  color: $white-color;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.title-sm {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.header {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.header a {
+  color: lighten(#F9CC10, 10%);
+}
+
+.header-continer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-image: linear-gradient(to right, #037119, #1c881b, #329f1a, #48b616, #5fce0c);
+  color: darken($white-color, 10%);
+}

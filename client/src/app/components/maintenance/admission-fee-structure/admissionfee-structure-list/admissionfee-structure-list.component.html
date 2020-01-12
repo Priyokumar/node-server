@@ -1,0 +1,50 @@
+<div class="shadow form-min-height ml-3 mr-3 mt-1 pb-5">
+  <div class="row p-1" style="background-color: #f07a7a;color: #ffffff" *ngIf="errorMessage">
+    <div class="col">
+      <span>{{errorMessage}}</span>
+    </div>
+  </div>
+  <div class="row p-1" style="background-color: #dddddd">
+    <div class="col-md-6" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <span style="font-weight: bold; font-size: 14px; line-height: 35px;">Admission Fee Structures</span>
+    </div>
+    <div class="col-md-6 text-right" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <button class="btn btn-save" [routerLink]="['/maintenance/admission-fee-create']">
+        <mat-icon>add</mat-icon>&nbsp;Add Admission Fee Structure
+      </button>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-md-12 table-header mb-5">
+
+      <div class="no-shadow w-100">
+        <table mat-table [dataSource]="admFeeStructureDataSource" matSort>
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+            <td style="padding-left: 25px !important;" mat-cell *matCellDef="let row; let i = index">{{i+1}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="year">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Year</th>
+            <td mat-cell *matCellDef="let row" class="name-class" (click)="onClickRow(row.id)">
+              {{row.year}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let row" class="text-right" (click)="onDeleteRow(row.id)">
+              <mat-icon style="color: firebrick; cursor: pointer;">clear</mat-icon> &nbsp;
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="admFeeStructureColumns;sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: admFeeStructureColumns ; let i = index;">
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<div style="height: 450px">
+  <div class="dialg-header w-100">
+    <div class="row">
+      <div class="col-md-6">
+        <span class="lead">Search Student</span>
+      </div>
+      <div class="col-md-6 text-right pr-0">
+        <mat-icon style="cursor: pointer; font-size: 23px;" (click)="close()">cancel</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="row">
+      <div class="col-md-12 p-0 shadow-sm table-header mb-5">
+        <div class="row p-2">
+          <div class="col-md-3">
+            <mat-form-field appearance="" class="w-100">
+              <mat-label>First name</mat-label>
+              <input matInput placeholder="Placeholder" [formControl]="firstNameFormCtl">
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field appearance="" class="w-100">
+              <mat-label>Last name</mat-label>
+              <input matInput placeholder="Placeholder" [formControl]="lastNameFormCtl">
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field appearance="" class="w-100">
+              <mat-label>Registration Number</mat-label>
+              <input matInput placeholder="Placeholder" [formControl]="registrationNoFctrl">
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-edit w-100" style="padding-bottom: 27px; margin-top: 10px;" (click)="searchStudent()">
+              <mat-icon>search</mat-icon>&nbsp;Search
+            </button>
+          </div>
+        </div>
+        <div class="no-shadow">
+          <table mat-table [dataSource]="studentDataSource" matSort class="">
+
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+              <td mat-cell *matCellDef="let row; let i = index">{{i+1}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="firstName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name </th>
+              <td mat-cell *matCellDef="let row">{{row.firstName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="middleName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Middle Name</th>
+              <td mat-cell *matCellDef="let row"> {{row.middleName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="lastName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+              <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="class">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Class</th>
+              <td mat-cell *matCellDef="let row"> {{row.standard}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="registrationNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Registration Number</th>
+              <td mat-cell *matCellDef="let row"> {{row.registrationNo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+              <td mat-cell *matCellDef="let row"> {{row.registrationStatus}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="studentColumns;sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: studentColumns ; let i = index;" (click)="select(row)">
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

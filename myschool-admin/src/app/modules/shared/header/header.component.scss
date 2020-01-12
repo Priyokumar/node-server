@@ -1,0 +1,14 @@
+
+$height : 45px;
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: $height !important;
+}
+.mat-toolbar-multiple-rows {
+  min-height: $height !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }

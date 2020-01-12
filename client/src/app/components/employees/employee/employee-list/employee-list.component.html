@@ -1,0 +1,65 @@
+<div class="shadow form-min-height ml-3 mr-3 mt-1 pb-5">
+  <div class="row p-1" style="background-color: #f07a7a;color: #ffffff" *ngIf="errorMessage">
+    <div class="col">
+      <span>{{errorMessage}}</span>
+    </div>
+  </div>
+  <div class="row p-1" style="background-color: #dddddd">
+    <div class="col-md-3" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <span style="font-weight: bold; font-size: 14px; line-height: 35px;">Employees</span>
+    </div>
+    <div class="col-md-5">
+      <mat-form-field appearance="fill" class="w-100">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        <mat-icon matSuffix>filter_list</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 text-right" [ngStyle.lt-md]="{'text-align' : 'center'}">
+      <button class="btn btn-save" [routerLink]="['/employee/create']">
+        <mat-icon>add</mat-icon>&nbsp;Add Employee
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Employess -->
+    <div class="col-md-12 table-header mb-5">
+      <!-- Table -->
+      <div class="no-shadow w-100">
+        <table mat-table [dataSource]="employeesDataSource" matSort class="">
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+            <td style="padding-left: 25px !important;" mat-cell *matCellDef="let row; let i = index">{{i+1}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let row" class="name-class" (click)="onClickRow(row.id)">{{row.name}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="designation">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Desigination</th>
+            <td mat-cell *matCellDef="let row"> {{row.designation}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let row" class="text-right" (click)="onDeleteEmployee(row.id)">
+              <mat-icon style="color: firebrick; cursor: pointer;">clear</mat-icon> &nbsp;
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="employeesColumns;sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: employeesColumns ; let i = index;">
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
